@@ -1,0 +1,6 @@
+chrome.tabs.onUpdated.addListener((tab) => {
+  chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    files: ['popup.js']
+  });
+});

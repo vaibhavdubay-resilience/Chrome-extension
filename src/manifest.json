@@ -1,0 +1,31 @@
+{
+  "name": "Fonor",
+  "description": "Development Phase",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "declarativeContent"
+  ],
+  "icons": {
+    "48": "assets/fonorlogo.png"
+  },
+  "background": {
+    "target": "scripts/background.js"
+  },
+  "action": {
+    "default_title": "Click to show an alert",
+    "default_icon": {
+      "16": "assets/fonorlogo.png"
+    },
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
